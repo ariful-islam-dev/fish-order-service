@@ -15,4 +15,10 @@ describe("Order Service", () => {
       })
       .expect(201);
   });
+
+  it("should get all order info", async()=>{
+    request(app)
+      .get("/orders")
+      .expect(200)
+  })
 })

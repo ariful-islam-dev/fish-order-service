@@ -1,0 +1,17 @@
+name: Test Using Mocha
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+      - name: Run Tests
+        run: yarn test
